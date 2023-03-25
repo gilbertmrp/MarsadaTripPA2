@@ -15,7 +15,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('welcome');
 });
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
