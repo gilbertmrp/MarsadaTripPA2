@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admim.index');
+    // untuk halaman admin
+});
+
+Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
+    // untuk halaman user
 });
