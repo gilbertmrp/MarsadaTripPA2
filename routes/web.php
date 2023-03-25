@@ -1,21 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.index');
 });
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
@@ -27,3 +19,6 @@ Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     // untuk halaman user
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
