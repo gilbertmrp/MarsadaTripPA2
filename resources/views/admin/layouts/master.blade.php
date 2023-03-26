@@ -22,8 +22,12 @@
   <link href="admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
   <link href="admin/assets/css/style.css" rel="stylesheet">
+  <style>
+    @yield('style');
+  </style>
 </head>
 
 <body>
@@ -36,13 +40,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
+      @yield('pagetitle')
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -65,9 +63,12 @@
   <script src="admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="admin/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="admin/assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="admin/assets/js/main.js"></script>
+  @yield('script')
 
 </body>
 
