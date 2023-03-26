@@ -10,13 +10,17 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
+Route::get('/home', function () {
+    return view('user.index');
+});
+
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admim.index');
     // untuk halaman admin
 });
 
 Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
-    Route::get('/', [UserController::class, 'index'])->name('user.index');
+    Route::get('/home', [UserController::class, 'index'])->name('user.index');
     // untuk halaman user
 });
 
