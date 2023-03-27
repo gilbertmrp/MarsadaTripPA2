@@ -18,6 +18,8 @@ Route::get('/home', function () {
 });
 //
 
+
+
 Route::get('/mobil', [MobilController::class, 'index'])->name('admin.mobil.index');
 Route::get('/mobil/add', [MobilController::class, 'addMobil'])->name('admin.mobil.add');
 Route::post('/mobil/add-process', [MobilController::class, 'addMobilProcess'])->name('admin.mobil.add.process');
@@ -35,6 +37,11 @@ Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
     Route::get('/home', [UserController::class, 'index'])->name('user.index');
     // untuk halaman user
 });
+
+
+Route::get('/booking',[UserController::class, 'index'])->name('user.form-user.create_booking');
+Route::post('/booking/add-process',[UserController::class, 'addbooking'])->name('user.form-user.create_booking.process');
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
