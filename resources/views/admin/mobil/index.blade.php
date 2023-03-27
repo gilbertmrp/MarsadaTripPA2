@@ -1,4 +1,13 @@
 @extends('admin.layouts.master')
+@section('script')
+    <script>
+          $(document).ready(function () {
+        $('#data').DataTable({
+            scrollX: true,
+        });
+    });
+    </script>
+@endsection
 @section('pagetitle')
 <h1>Mobil</h1>
 <nav>
@@ -15,71 +24,29 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Data Mobil</h5>
-          <a href="#"><button type="button" class="btn btn-success">Tambah Mobil</button></a>
-          <table class="table datatable">
+          <a href="{{ route('admin.mobil.add') }}"><button type="button" class="btn btn-success" style="margin-bottom: 10px;">Tambah</button></a>
+          <table id="data" class="display nowrap" style="width:100%">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Position</th>
-                <th scope="col">Age</th>
-                <th scope="col">Start Date</th>
-              </tr>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Mobil</th>
+                    <th>Gambar</th>
+                    <th>Lokasi</th>
+                    <th>Message</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Brandon Jacob</td>
-                <td>Designer</td>
-                <td>28</td>
-                <td>2016-05-25</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Bridie Kessler</td>
-                <td>Developer</td>
-                <td>35</td>
-                <td>2014-12-05</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Ashleigh Langosh</td>
-                <td>Finance</td>
-                <td>45</td>
-                <td>2011-08-12</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Angus Grady</td>
-                <td>HR</td>
-                <td>34</td>
-                <td>2012-06-11</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Raheem Lehner</td>
-                <td>Dynamic Division Officer</td>
-                <td>47</td>
-                <td>2011-04-19</td>
-              </tr>
-
-              <tr>
-                <th scope="row">6</th>
-                <td>Gilbert</td>
-                <td>Dynamic Division Officer</td>
-                <td>47</td>
-                <td>2011-04-19</td>
-              </tr>
-
-              <tr>
-                <th scope="row">7</th>
-                <td>Edward</td>
-                <td>Dynamic Division Officer</td>
-                <td>47</td>
-                <td>2011-04-19</td>
-              </tr>
+              @foreach ($datas as $data)
+                <tr>
+                  <td>{{ $data->id }}</td>
+                  <td>{{ $data->nama_mobil }}</td>
+                  <td><img src="images/{{ $data->gambar }}" alt="images/{{ $data->gambar }} " style="width: 100px;height:100px;"></td>
+                  <td>{{ $data->lokasi }}</td>
+                  <td>{{ $data->message }}</td>
+                </tr>
+              @endforeach
             </tbody>
-          </table>
+        </table>
 
         </div>
       </div>
