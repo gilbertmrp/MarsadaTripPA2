@@ -10,9 +10,11 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
+//user
 Route::get('/home', function () {
     return view('user.index');
 });
+//
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admim.index');
