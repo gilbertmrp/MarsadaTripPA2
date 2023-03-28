@@ -9,12 +9,13 @@ class Booking extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $table = 'booking';
     protected $fillable = [
         'nama_pemesan',
         'nama_mobil',
         'date_booking',
         'date_checkout',
-        'driver'
+        'driver',
     ];
 }
