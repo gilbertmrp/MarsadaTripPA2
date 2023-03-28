@@ -32,7 +32,7 @@
                     <th>Nama Mobil</th>
                     <th>Gambar</th>
                     <th>Lokasi</th>
-                    <th>Message</th>
+                    <th>Badges</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +42,15 @@
                   <td>{{ $data->nama_mobil }}</td>
                   <td><img src="images/{{ $data->gambar }}" alt="images/{{ $data->gambar }} " style="width: 100px;height:100px;"></td>
                   <td>{{ $data->lokasi }}</td>
-                  <td>{{ $data->message }}</td>
+                  <td>
+                    @foreach (explode(',', $data->badges) as $badge)
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <span class="badge bg-primary"><i class="bi bi-star me-1"></i>{{ $badge }}</span>
+                        </div>
+                      </div>
+                    @endforeach
+                  </td>
                 </tr>
               @endforeach
             </tbody>
