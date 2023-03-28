@@ -53,10 +53,7 @@
     <div class="page-wrapper">
         <header class="main-header clearfix">
             <div class="main-header__top">
-                <div class="main-header__top-left">
-                    <p class="main-header__top-left-text">Welcome to our Rental Marketplace, <a href="#">Register
-                            Now</a></p>
-                </div>
+                
                 <div class="main-header__top-right">
                     <div class="main-header__top-right-social-box">
                         <div class="main-header__top-right-social">
@@ -66,12 +63,7 @@
                             <a href="#" class="clr-ins"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <div class="main-header__top-right-contact-box">
-                        <ul class="list-unstyled main-header__top-right-contact">
-                            <li><a href="mailto:needhelp@company.com">needhelp@company.com</a></li>
-                            <li><a href="tel:00-666-888-0000">00 666 888 0000</a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
             <nav class="main-menu clearfix">
