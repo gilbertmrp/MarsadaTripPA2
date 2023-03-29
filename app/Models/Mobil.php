@@ -9,5 +9,10 @@ class Mobil extends Model
 {
     use HasFactory;
     protected $table = 'cars';
-    protected $fillable = ['nama_mobil', 'gambar','lokasi', 'message'];
+    protected $fillable = ['nama_mobil', 'gambar','lokasi', 'badges'];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
