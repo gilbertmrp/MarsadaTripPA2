@@ -12,7 +12,7 @@ class UserController extends Controller
         return view('user.form-user.create_booking');
     }
     public function addbooking(Request $request){
-        // dd($request->all());
+        //dd($request->all());
         $request->validate([
             'nama_pemesan' => ['required'],
             'nama_mobil' => ['required'],
