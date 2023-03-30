@@ -1,13 +1,4 @@
 @extends('admin.layouts.master')
-@section('script')
-    <script>
-          $(document).ready(function () {
-        $('#data').DataTable({
-            scrollX: true,
-        });
-    });
-    </script>
-@endsection
 @section('pagetitle')
 <h1>Mobil</h1>
 <nav>
@@ -32,13 +23,15 @@
                     <th>Nama Mobil</th>
                     <th>Gambar</th>
                     <th>Lokasi</th>
-                    <th>Badges</th>
+                    <th>Message</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+              @php $counter = 1; @endphp
               @foreach ($datas as $data)
                 <tr>
-                  <td>{{ $data->id }}</td>
+                  <td>{{ $counter }}</td>
                   <td>{{ $data->nama_mobil }}</td>
                   <td><img src="images/{{ $data->gambar }}" alt="images/{{ $data->gambar }} " style="width: 100px;height:100px;"></td>
                   <td>{{ $data->lokasi }}</td>
@@ -51,7 +44,11 @@
                       </div>
                     @endforeach
                   </td>
+                  <td>
+                    <a href="#"><i class="bi bi-trash delete" data-id="{{ $data->id }}" data-nama="{{ $data->nama_mobil }}"></i></a>
+                  </td>
                 </tr>
+                @php $counter++; @endphp
               @endforeach
             </tbody>
         </table>
@@ -61,4 +58,37 @@
 
     </div>
 </div>
+@endsection
+@section('script')
+    <script>
+          $(document).ready(function () {
+        $('#data').DataTable({
+            scrollX: true,
+        });
+    });
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      $('.delete').click(function() {
+        var dataId = $(this).attr('data-id');
+        var dataNamaMobil = $(this).attr('data-nama');
+        swal({
+        title: "Sure?",
+        text: "Delete a car with name " + dataNamaMobil,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            window.location = "/mobil/delete/"+dataId;
+            swal("Data deleted successfully", {
+              icon: "success",
+            });
+          } else {
+            swal("Data is not deleted!");
+          }
+        });
+      });
+    </script>
 @endsection

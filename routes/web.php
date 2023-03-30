@@ -23,6 +23,7 @@ Route::get('/home', function () {
 Route::get('/mobil', [MobilController::class, 'index'])->name('admin.mobil.index');
 Route::get('/mobil/add', [MobilController::class, 'addMobil'])->name('admin.mobil.add');
 Route::post('/mobil/add-process', [MobilController::class, 'addMobilProcess'])->name('admin.mobil.add.process');
+Route::get('/mobil/delete/{id}', [MobilController::class, 'delete']);
 
 
 Route::get('/testimonial', [TestimonialController::class, 'index'])->name('admin.testimonial.index');

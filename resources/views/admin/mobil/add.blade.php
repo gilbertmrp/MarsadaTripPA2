@@ -1,15 +1,20 @@
 @extends('admin.layouts.master')
 @section('style')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />
   <style>
-    .btn-close {
-      color: white;
-    }
-
-    textarea {
-      resize: none;
+    .bootstrap-tagsinput{
+        width: 100%;
+        font-size: 1rem;
+      }
+    .bootstrap-tagsinput .label-info{
+      display: inline-block;
+      background-color: #56575a;
+      padding: 0 0.4em 0.15em;
+      border-radius: 0.25rem;
+      margin-bottom: 0.4em;
+      color: #fff;
     }
   </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />
 @endsection
 @section('pagetitle')
 <h1>Tambah Mobil</h1>
@@ -53,7 +58,7 @@
         <div class="row mb-3">
           <label for="inputEmail" class="col-sm-2 col-form-label">Lokasi : </label>
           <div class="col-sm-10">
-            <textarea name="lokasi" id="lokasi" class="form-control" rows="10" resize="none">{{ old('lokasi') }}</textarea>
+            <textarea name="lokasi" id="lokasi" class="form-control" rows="10" style="resize:none;">{{ old('lokasi') }}</textarea>
           </div>
           @error('lokasi')
               <div class="text-danger">
@@ -65,11 +70,11 @@
           <label for="inputPassword" class="col-sm-2 col-form-label">Message : </label>
           <div class="col-sm-10">
             <div class="form-group">
-              <input type="text" id="discussion-keywords" name="badges" class="form-control" data-role="tagsinput">
-            </div>
+              <input id="tags" type="text" class="form-control" name="badges" data-role="tagsinput">
             </div>
           </div>
-          @error('message')
+          </div>
+          @error('badges')
               <div class="text-danger">
                 <p>Pesan tidak boleh kosong</p>
               </div>
@@ -87,19 +92,44 @@
 @endsection
 @section('script')
   <script>
-    const input = document.getElementById('discussion-keywords');
+    const input = document.getElementById('tags');
+
     input.addEventListener('keydown', function(event) {
         if (event.keyCode === 13) { 
             event.preventDefault();
-            const tag = document.createElement('span');
-            tag.textContent = input.value;
-            tag.classList.add('tag', 'badge', 'badge-dark');
-            const removeIcon = document.createElement('span');
-            removeIcon.dataset.role = 'remove';
-            tag.appendChild(removeIcon);
-            const tagsInput = document.querySelector('.bootstrap-tagsinput');
-            tagsInput.insertBefore(tag, input);
-            input.value = '';
+            const inputText = input.value.trim(); 
+            const words = inputText.split(' ');
+
+            if (words.length > 1) {
+              const badge = document.createElement('span');
+              badge.classList.add('badge', 'bg-dark', 'me-1');
+              badge.innerText = words.join('-'); 
+              
+              const closeButton = document.createElement('button');
+              closeButton.classList.add('btn-close');
+              closeButton.addEventListener('click', function() {
+                badge.remove();
+              });
+              badge.appendChild(closeButton);
+
+              input.appendChild(badge);
+              badgeController.appendChild(badge);
+            }else if (words.length === 1 && words[0]) { 
+              const badge = document.createElement('span');
+              badge.classList.add('badge', 'bg-dark', 'me-1');
+              badge.innerText = words[0];
+
+              const closeButton = document.createElement('button');
+              closeButton.classList.add('btn-close', 'btn-close-white');
+              closeButton.addEventListener('click', function() {
+                badge.remove();
+              });
+              badge.appendChild(closeButton);
+
+              input.appendChild(badge);
+              badgeController.appendChild(badge);
+            }
+            inputText.value = ''; 
         }
     });
   </script>
