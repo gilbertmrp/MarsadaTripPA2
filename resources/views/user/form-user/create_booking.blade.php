@@ -75,11 +75,11 @@
                                         <label for="ask" >Menggunakan Sopir Dari Marsada Trip</label> <br>
 
 										<label for="tidak">
-											<input type="radio" id="tidak" name="driver">
+											<input type="radio" id="tidak" name="driver" value="tidak">
 											<span></span>Tidak
 										</label>
 										<label for="ya">
-											<input type="radio" id="ya" name="driver">
+											<input type="radio" id="ya" name="driver" value="ya">
 											<span></span>Ya
 										</label>
 									</div>

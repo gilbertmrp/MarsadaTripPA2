@@ -1,18 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\FormRequest;
 use Illuminate\Http\Request;
 use App\Models\Booking;
-
-
+use Illuminate\Support\Facades\Http;
 class UserController extends Controller
 {
     public function index() {
         return view('user.form-user.create_booking');
     }
-    public function addbooking(Request $request){
-        // dd($request->all());
+    public function addbooking(FormRequest $request){
+        //dd($request->all());
         $request->validate([
             'nama_pemesan' => ['required'],
             'nama_mobil' => ['required'],
@@ -28,6 +27,12 @@ class UserController extends Controller
         $booking-> date_checkout = $request->date_checkout;
         $booking->driver = $request->driver;
         $booking->save();
-        return redirect('/home')->with('status', 'Rental berhasil di tambahkan');
+
+        $nowa = '081265117697';
+        $message = 'Syalom <br>' . $request->nama_pemesan . 'Nama Mobil:' . $request->nama_mobil . 'Tanggal Berangkat' . $request->date_booking . 'Tanggal Kembali' . $request->date_checkout . 'driver' . $request->driver;
+        $api = 'https://wa.me/'. $nowa . urlencode($message);
+        Http::get($api);
+
+        return redirect()->away($api);
     }
 }

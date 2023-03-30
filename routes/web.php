@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestimonialController;
+use Illuminate\Support\Facades\Redirect;
+
 
 Route::get('/', function () {
     return view('admin.index');
