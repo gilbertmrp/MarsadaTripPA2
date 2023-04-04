@@ -53,7 +53,7 @@
     <div class="page-wrapper">
         <header class="main-header clearfix">
             <div class="main-header__top">
-                
+
                 <div class="main-header__top-right">
                     <div class="main-header__top-right-social-box">
                         <div class="main-header__top-right-social">
@@ -221,58 +221,6 @@
         </section>
         <!--Banner One End-->
 
-
-        <!--Search Box Start-->
-        <section class="search-box">
-            <div class="search-box__container">
-                <form class="search-box__form">
-                    <ul class="list-unstyled search-box__main clearfix">
-                        <li class="search-box__input">
-                            <select class="selectpicker" aria-label="Default select example">
-                                <option selected>Pick-up location</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </li>
-                        <li class="search-box__input">
-                            <select class="selectpicker" aria-label="Default select example">
-                                <option selected>Drop-off location</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </li>
-                        <li class="search-box__input">
-                            <select class="selectpicker" aria-label="Default select example">
-                                <option selected>Select car class</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </li>
-                        <li class="search-box__input">
-                            <input type="text" name="date" placeholder="Select date" id="datepicker">
-                            <div class="search-box__icon-box">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                        </li>
-                        <li class="search-box__input">
-                            <input type="text" name="time" placeholder="Select time">
-                            <div class="search-box__icon-box">
-                                <i class="far fa-clock"></i>
-                            </div>
-                        </li>
-                        <li class="search-box__input">
-                            <button type="submit" class="search-box__btn">Find Your Car</button>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </section>
-        <!--Search Box  Start-->
-
-
         <!--Premium Ride Start-->
         <section class="premium-ride">
             <div class="container">
@@ -315,7 +263,13 @@
         <!--Premium Ride End-->
 
         <!--Featured One Start-->
-        <section class="featured-one">
+
+        <!--Featured One End-->
+
+        <!--Explore Car Start-->
+        <section class="explore-car">
+            <div class="explore-car__container">
+                <section class="featured-one">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-8">
@@ -330,87 +284,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="featured-one__left wow fadeInLeft" data-wow-duration="1500ms">
-                            <div class="featured-one__left-img">
-                                <img src="assets/images/resources/featured-one-img-1.jpg" alt="">
-                                <div class="featured-one__left-img-content">
-                                    <h2 class="featured-one__left-img-title"><a href="listings-details.html">Land Rover
-                                            Evoque Pure</a></h2>
-                                    <p class="featured-one__left-car-price"><span>$32</span> /perday</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <!--Featured One Single-->
-                                <div class="featured-one__single wow fadeInUp" data-wow-delay="100ms">
-                                    <div class="featured-one__img">
-                                        <img src="assets/images/resources/featured-one-img-2.jpg" alt="">
-                                        <div class="featured-one__img-content">
-                                            <h3 class="featured-one__img-content-title"><a
-                                                    href="listings-details.html">Toyota Prius Auto</a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>$32</span> /perday</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <!--Featured One Single-->
-                                <div class="featured-one__single wow fadeInUp" data-wow-delay="200ms">
-                                    <div class="featured-one__img">
-                                        <img src="assets/images/resources/featured-one-img-3.jpg" alt="">
-                                        <div class="featured-one__img-content">
-                                            <h3 class="featured-one__img-content-title"><a
-                                                    href="listings-details.html">Toyota Prius Auto</a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>$32</span> /perday</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <!--Featured One Single-->
-                                <div class="featured-one__single wow fadeInUp" data-wow-delay="300ms">
-                                    <div class="featured-one__img">
-                                        <img src="assets/images/resources/featured-one-img-4.jpg" alt="">
-                                        <div class="featured-one__img-content">
-                                            <h3 class="featured-one__img-content-title"><a
-                                                    href="listings-details.html">Toyota Prius Auto</a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>$32</span> /perday</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <!--Featured One Single-->
-                                <div class="featured-one__single wow fadeInUp" data-wow-delay="400ms">
-                                    <div class="featured-one__img">
-                                        <img src="assets/images/resources/featured-one-img-5.jpg" alt="">
-                                        <div class="featured-one__img-content">
-                                            <h3 class="featured-one__img-content-title"><a
-                                                    href="listings-details.html">Toyota Prius Auto</a></h3>
-                                            <p class="featured-one__img-content-car-price"><span>$32</span> /perday</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-        <!--Featured One End-->
-
-        <!--Explore Car Start-->
-        <section class="explore-car">
-            <div class="explore-car__container">
-                <div class="section-title text-center">
-                    <span class="section-title__tagline">Browse Hot Offers</span>
-                    <h2 class="section-title__title">Explore Car Range</h2>
-                </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <!--Explore Car Single-->
@@ -570,41 +445,7 @@
         </section>
         <!--Rent a Car End-->
 
-        <!--Download Start-->
-        <section class="download">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8">
-                        <div class="download__content">
-                            <p class="download__text">Get our mobile app for easy and convenient usage</p>
-                            <h2 class="download__title">Download Our Application</h2>
-                            <div class="download__btns">
-                                <div class="download__btn-1">
-                                    <a href="#">
-                                        <i class="fa fa-play"></i>
-                                        <p><span>Get in</span><br>Google Play</p>
-                                    </a>
-                                </div>
-                                <div class="download__btn-1 download__btn-2">
-                                    <a href="#">
-                                        <i class="fab fa-apple"></i>
-                                        <p><span>Get in</span><br>Play Store</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow fadeInRight" data-wow-duration="1500ms">
-                        <div class="download__screen">
-                            <div class="download__screen-image">
-                                <img src="assets/images/resources/download-screen-img.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Download End-->
+
 
         <!--About One Start-->
         <section class="about-one">
@@ -639,57 +480,7 @@
         </section>
         <!--About One End-->
 
-        <!--Brand One Start-->
-        <section class="brand-one">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <!--Brand One Single-->
-                        <div class="brand-one__single">
-                            <div class="brand-one__main-img">
-                                <a href="#"><img src="assets/images/brand/brand-1-1.png" alt=""></a>
-                            </div>
-                            <div class="brand-one__overly">
-                                <a href="#"><img src="assets/images/brand/brand-1-1-overly.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <!--Brand One Single-->
-                        <div class="brand-one__single">
-                            <div class="brand-one__main-img">
-                                <a href="#"><img src="assets/images/brand/brand-1-2.png" alt=""></a>
-                            </div>
-                            <div class="brand-one__overly">
-                                <a href="#"><img src="assets/images/brand/brand-1-2-overly.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <!--Brand One Single-->
-                        <div class="brand-one__single">
-                            <div class="brand-one__main-img">
-                                <a href="#"><img src="assets/images/brand/brand-1-3.png" alt=""></a>
-                            </div>
-                            <div class="brand-one__overly">
-                                <a href="#"><img src="assets/images/brand/brand-1-3-overly.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <!--Brand One Single-->
-                        <div class="brand-one__single">
-                            <div class="brand-one__main-img">
-                                <a href="#"><img src="assets/images/brand/brand-1-4.png" alt=""></a>
-                            </div>
-                            <div class="brand-one__overly">
-                                <a href="#"><img src="assets/images/brand/brand-1-4-overly.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--Brand One End-->
 
         <!--News One Start-->
