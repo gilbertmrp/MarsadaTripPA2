@@ -28,7 +28,7 @@
   @yield('style')
 </head>
 
-<body>
+<body ng-controller="MainCtrl">
   <!-- ======= Header ======= -->
   @include('admin.layouts.header');
 
@@ -36,7 +36,18 @@
   @include('admin.layouts.sidebar');
 
   <main id="main" class="main">
-
+    @if (session('success'))
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      Data added successfully
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+        @yield('container')
     <div class="pagetitle">
       @yield('pagetitle')
     </div><!-- End Page Title -->

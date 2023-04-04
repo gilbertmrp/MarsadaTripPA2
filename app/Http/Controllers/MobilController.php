@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tag;
 use App\Models\Mobil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class MobilController extends Controller
 {
@@ -18,6 +19,7 @@ class MobilController extends Controller
     }
     
     public function addMobilProcess(Request $request) {
+        // dd($request->all());
         $request->validate([
             'nama_mobil' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -40,6 +42,13 @@ class MobilController extends Controller
             $newCars->gambar = $request->file('gambar')->getClientOriginalName();
             $newCars->save();
         }
+        return redirect()->route('admin.mobil.index')->with('success', "Data berhasil ditamabh");
+    }
+
+    public function delete($id) {
+        $deleteCars = Mobil::find($id);
+        $deleteCars->delete();
         return redirect()->route('admin.mobil.index');
     }
+    
 }
