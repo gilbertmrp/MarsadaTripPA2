@@ -287,28 +287,30 @@
             </div>
         </section>
                 <div class="row">
+                    @foreach ($mobil as $car)
+
+
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <!--Explore Car Single-->
                         <div class="explore-car__single">
                             <div class="explore-car__img">
-                                <img src="assets/images/resources/explore-car-img-1.jpg" alt="">
+                                <img src="images/{{ $car->gambar }}" alt="images/{{ $car->gambar }}">
                                 <div class="explore-car__icon">
                                     <i class="far fa-heart"></i>
                                 </div>
                             </div>
                             <div class="explore-car__content">
                                 <h5 class="explore-car__sub-title">Sedan Car</h5>
-                                <h3 class="explore-car__title"><a href="listings-details.html">Land Rover Evoque
-                                        Pure</a></h3>
-                                <p class="explore-car__price"><span>$32 </span>/perday</p>
+                                <h3 class="explore-car__title"><a href="listings-details.html">{{$car->nama_mobil}}</a></h3>
+                                {{-- <p class="explore-car__price"><span>$32 </span>/perday</p> --}}
                                 <ul class="list-unstyled explore-car__details">
-                                    <li><a href="#">2016 Petrol</a></li>
-                                    <li><a href="#">Air Condition</a></li>
-                                    <li><a href="#">Auto</a></li>
+                                    @foreach (explode(',', $car->badges) as $badge)
+                                    <li><a href="#">{{$badge}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>     @endforeach
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <!--Explore Car Single-->
                         <div class="explore-car__single">

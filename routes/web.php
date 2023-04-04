@@ -15,9 +15,7 @@ Route::get('/', function () {
 });
 
 //user
-Route::get('/home', function () {
-    return view('user.index');
-});
+
 //
 
 
@@ -41,7 +39,7 @@ Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
     // untuk halaman user
 });
 
-
+Route::get('/home',[UserController::class, 'getdata'])->name('user.index');
 Route::get('/booking',[UserController::class, 'index'])->name('user.form-user.create_booking');
 Route::post('/booking/add-process',[UserController::class, 'addbooking'])->name('user.form-user.create_booking.process');
 

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Http;
 use Twilio\Rest\Client;
-
+use App\Models\Mobil;
 
 class UserController extends Controller
 {
@@ -34,6 +34,12 @@ class UserController extends Controller
 ;
 
         return redirect()->back()->with('success', 'Data berhasil disimpan.');
+    }
+
+    //data to user page
+    public function getdata(){
+        $mobil = Mobil::all();
+        return view ('user.index', compact('mobil'));
     }
 
 }
