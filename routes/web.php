@@ -10,16 +10,6 @@ use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Redirect;
 
 
-Route::get('/', function () {
-    return view('admin.index');
-});
-
-//user
-
-//
-
-
-
 Route::get('/mobil', [MobilController::class, 'index'])->name('admin.mobil.index');
 Route::get('/mobil/add', [MobilController::class, 'addMobil'])->name('admin.mobil.add');
 Route::post('/mobil/add-process', [MobilController::class, 'addMobilProcess'])->name('admin.mobil.add.process');
@@ -29,8 +19,8 @@ Route::get('/mobil/delete/{id}', [MobilController::class, 'delete']);
 Route::get('/testimonial', [TestimonialController::class, 'index'])->name('admin.testimonial.index');
 Route::get('/testimonial/add', [TestimonialController::class, 'addTesti'])->name('admin.testimonial.add');
 
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admim.index');
+Route::prefix('admin')->middleware(['auth', 'user'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admim.index');
     // untuk halaman admin
 });
 
@@ -39,10 +29,15 @@ Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
     // untuk halaman user
 });
 
+
+//form-boooking
 Route::get('/home',[UserController::class, 'getdata'])->name('user.index');
 Route::get('/booking',[UserController::class, 'index'])->name('user.form-user.create_booking');
 Route::post('/booking/add-process',[UserController::class, 'addbooking'])->name('user.form-user.create_booking.process');
 
-
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+//login
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/login/post', [LoginController::class, 'indexlogin']);
+//register
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register/post',[RegisterController::class, 'store']);

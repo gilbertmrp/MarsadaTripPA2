@@ -307,7 +307,8 @@
                                     @foreach (explode(',', $car->badges) as $badge)
                                     <li><a href="#">{{$badge}}</a></li>
                                     @endforeach
-                                </ul>
+                                </ul> <br>
+                                <a href="/booking" class="explore-car__price" style="background-color: rgb(232, 227, 227);font-size:24px;padding:5px;border-radius:5px">Booking</a>
                             </div>
                         </div>
                     </div>     @endforeach
