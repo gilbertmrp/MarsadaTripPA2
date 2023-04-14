@@ -19,7 +19,7 @@ class LoginController extends Controller
         $input = $request->all();
         if(auth()->attempt(array('username' =>$input['username'], 'password' => $input['password']))){
             if(auth()->user()->role == "a"){
-                return redirect('/admin');
+                return redirect('/dashboard');
             }else{
                 return redirect('/home');
             }

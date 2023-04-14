@@ -29,9 +29,11 @@ Route::prefix('user')->middleware(['auth', 'user'])->group(function() {
     // untuk halaman user
 });
 
+Route::get('a/dashboard', [AdminController::class, 'dashboard'])->middleware('checkRole:a');
+
 
 //form-boooking
-Route::get('/home',[UserController::class, 'getdata'])->name('user.index');
+Route::get('u/home',[UserController::class, 'getdata'])->name('user.index')->middleware('checkRole:u');
 Route::get('/booking',[UserController::class, 'index'])->name('user.form-user.create_booking');
 Route::post('/booking/add-process',[UserController::class, 'addbooking'])->name('user.form-user.create_booking.process');
 
