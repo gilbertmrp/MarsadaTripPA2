@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'AdminMarsadaTrip',
             'email' => 'marsadatrip@gmail.com',
             'password' =>Hash::make('marsadaadmin'),
-            'role' => 'a'
+            'role' => 'admin'
         ]);
         foreach($data as $d){
             User::create([
