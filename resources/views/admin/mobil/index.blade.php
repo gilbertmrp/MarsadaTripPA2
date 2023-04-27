@@ -33,7 +33,7 @@
                 <tr>
                   <td>{{ $counter }}</td>
                   <td>{{ $data->nama_mobil }}</td>
-                  <td><img src="images/{{ $data->gambar }}" alt="images/{{ $data->gambar }} " style="width: 100px;height:100px;"></td>
+                  <td><img src="{{ asset('storage/'.$data->gambar) }}" alt="{{ asset('storage/'.$data->gambar) }} " style="width: 100px;height:100px;"></td>
                   <td>{{ $data->lokasi }}</td>
                   <td>
                     @foreach (explode(',', $data->badges) as $badge)

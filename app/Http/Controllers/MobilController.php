@@ -37,9 +37,11 @@ class MobilController extends Controller
         ]);
 
         
-        if($request->hasFile('gambar')) {
-            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
-            $newCars->gambar = $request->file('gambar')->getClientOriginalName();
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public', $filename);
+            $newCars->gambar = $filename;
             $newCars->save();
         }
         return redirect()->route('admin.mobil.index')->with('success', "Data berhasil ditamabh");

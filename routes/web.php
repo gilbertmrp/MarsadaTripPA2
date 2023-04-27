@@ -14,12 +14,6 @@ Route::get('/', function () {
     return view('admin.index');
 });
 
-//user
-
-//
-
-
-
 Route::get('/mobil', [MobilController::class, 'index'])->name('admin.mobil.index');
 Route::get('/mobil/add', [MobilController::class, 'addMobil'])->name('admin.mobil.add');
 Route::post('/mobil/add-process', [MobilController::class, 'addMobilProcess'])->name('admin.mobil.add.process');

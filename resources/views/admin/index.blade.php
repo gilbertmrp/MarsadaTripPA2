@@ -23,7 +23,10 @@
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Data</h5>
+          <div style="margin-bottom: 10px;">
+            <h5 class="card-title" style="display:inline;">Data</h5>
+            <button type="button" class="btn btn-success" style="float:right;"><i class="ri-save-3-line" ></i> Ekspor PDF</button>
+          </div>
           <table id="data" class="display nowrap" style="width:100%">
             <thead>
                 <tr>
