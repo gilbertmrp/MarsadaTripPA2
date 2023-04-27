@@ -6,6 +6,8 @@ use App\Models\Booking;
 use Illuminate\Support\Facades\Http;
 use Twilio\Rest\Client;
 use App\Models\Mobil;
+use Illuminate\Support\Facades\Validator;
+
 
 class UserController extends Controller
 {
@@ -19,7 +21,7 @@ class UserController extends Controller
             'no_telepon' => ['required'],
             'nama_mobil' => ['required'],
             'date_booking' => 'required|date|after_or_equal:today',
-            'date_checkout' => 'required',
+            'date_checkout' => 'required|date|after_or_equal:today',
             'driver' => 'required',
         ]);
 

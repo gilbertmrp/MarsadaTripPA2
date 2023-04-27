@@ -70,7 +70,7 @@
                 <div class="main-menu-wrapper clearfix">
                     <div class="main-menu-wrapper__left clearfix">
                         <div class="main-menu-wrapper__logo">
-                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt="" style="width: 5rem"></a>
                         </div>
                         <div class="main-menu-wrapper__main-menu">
                             <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -307,7 +307,8 @@
                                     @foreach (explode(',', $car->badges) as $badge)
                                     <li><a href="#">{{$badge}}</a></li>
                                     @endforeach
-                                </ul>
+                                </ul> <br>
+                                <a href="/booking" class="explore-car__price" style="background-color: rgb(232, 227, 227);font-size:24px;padding:5px;border-radius:5px">Booking</a>
                             </div>
                         </div>
                     </div>     @endforeach
@@ -698,12 +699,15 @@
                                 <h3 class="footer-widget__title">Newsletter</h3>
                                 <p class="footer-widget__newsletter-text">Subsrcibe for latest articles and resources
                                 </p>
-                                <form class="footer-widget__newsletter-form">
+                                <form class="footer-widget__new sletter-form" action="/feedback" method="POST">
+                                    @csrf
                                     <div class="footer-widget__newsletter-input-box">
                                         <input type="email" placeholder="Email address" name="email">
-                                        <button type="submit" class="footer-widget__newsletter-btn"><i
-                                                class="fas fa-envelope"></i></button>
                                     </div>
+                                    <div class="footer-widget__newsletter-input-box">
+                                        <textarea name="isi" id="" cols="30" rows="10" placeholder="Tinggalkan pesan.."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-info text-white">Kirim</button>
                                 </form>
                             </div>
                         </div>
